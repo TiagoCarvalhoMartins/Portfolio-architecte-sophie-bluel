@@ -17,6 +17,7 @@ async function getCategories() {
   return (myJSON)
 }
 
+// ajoute un template au DOM de chaque work sous forme d'images et leurs titres
 async function displayGallery (worksData) {
   for (i = 0; i < worksData.length; i++) {
       document.querySelector(".gallery").innerHTML +=   `<figure>
@@ -26,6 +27,7 @@ async function displayGallery (worksData) {
   }
 }
 
+// ajoute un template au DOM de chaque catégorie sous forme de boutons
 async function displayFilters (categoriesData) {
   for (i = 0; i < categoriesData.length; i++) {
       document.querySelector(".filterButtons").innerHTML +=   `<button class="filterButton" name="${categoriesData[i].id}">
@@ -35,23 +37,41 @@ async function displayFilters (categoriesData) {
 }
 
 async function filterButton(worksData) {
+
+  // initialise un tableau qui va nous servir à stocker des éléments filtrés
   let filteredWorks = []
+
+  // Récupère les différents boutons puis pour chaque un d'eux récupère son attribut name qui est lié à l'id de la catégorie
   let boutons = document.querySelectorAll(".filterButton");
     boutons.forEach(bouton => {
       let name = bouton.getAttribute("name")
       bouton.addEventListener("click", function() {
+
+      // Vide le tableau de filteredWorks avant d'y push des choses et retire la class "active" de tous les boutons
         filteredWorks = []
+        for (let i = 0; i < boutons.length; i++) {
+          boutons[i].classList.remove("active");
+        }
+  
+      // Si le name dans le bouton vaut "all" afficher le tableau de tous les médias worksData
         if (name === "all") {
-          document.querySelector(".gallery").innerHTML = "";
+          document.querySelector(".gallery").innerHTML = "";;
+          this.classList.add("active")
           displayGallery(worksData);
         } else {
+      
+      // Sinon parcourir le tableau worksData et comparer lid de la catégorie avec le name du bouton
+      // Si cela est juste ajoute l'élement worksData actuel dans le tableau filteredWorks ainsi qu'ajoue de la class "active" au bouton
         for (let i = 0; i < worksData.length; i++) {
 
           if (worksData[i].category.id == name) {
             filteredWorks.push(worksData[i]);
+            this.classList.add("active")
           };
         }
         console.log("Objets correspondants :", filteredWorks);
+
+      // Vide le html contenue dans "gallery" pour ne pas ajouter les éléments les uns à la suite des autres puis afficher les éléments triés
         document.querySelector(".gallery").innerHTML = "";
         displayGallery(filteredWorks);
 

@@ -140,6 +140,15 @@ li:hover {
 	margin: 0 5px 40px 5px;
 }
 
+.filterButton.active{
+	background-color: #1D6154;
+	color: white;
+}
+
+.filterButton.active span{
+	color: white;
+}
+
 .filterButton span {
 	font-family: 'Syne';
 	font-size: 15px;
