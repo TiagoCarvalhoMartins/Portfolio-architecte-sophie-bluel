@@ -25,7 +25,11 @@ input {
     margin-top: 5px;
 }
 
-.connectButton {
+input[data-error-visible="true"] {
+    box-shadow: 0 0 5px 1px red;
+}
+
+#connectButton {
 	border: solid #1D6154 1px;
     color: white;
 	border-radius: 60px;
@@ -34,7 +38,7 @@ input {
 	margin-top: 30px; 
 }
 
-.connectButton span {
+#connectButton span {
 	font-family: 'Syne';
 	font-size: 15px;
 }
