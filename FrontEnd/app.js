@@ -17,6 +17,14 @@ async function getCategories() {
   return (myJSON)
 }
 
+// Le login renvoi vers une nouvelle page nommé login.html
+const login = document.getElementById("login");
+login.addEventListener("click", function() {
+  const loginPage = "login.html";
+  window.location.href = loginPage;
+});
+
+
 // ajoute un template au DOM de chaque work sous forme d'images et leurs titres
 async function displayGallery (worksData) {
   for (i = 0; i < worksData.length; i++) {
@@ -59,17 +67,13 @@ async function filterButton(worksData) {
           this.classList.add("active")
           displayGallery(worksData);
         } else {
-      
-      // Sinon parcourir le tableau worksData et comparer lid de la catégorie avec le name du bouton
-      // Si cela est juste ajoute l'élement worksData actuel dans le tableau filteredWorks ainsi qu'ajoue de la class "active" au bouton
-        for (let i = 0; i < worksData.length; i++) {
+  
+      const filteredWorks = worksData.filter(function(work){
+      return work.category.id == name;
+      });
 
-          if (worksData[i].category.id == name) {
-            filteredWorks.push(worksData[i]);
-            this.classList.add("active")
-          };
-        }
-        console.log("Objets correspondants :", filteredWorks);
+      this.classList.add("active")
+      console.log("Objets correspondants :", filteredWorks);
 
       // Vide le html contenue dans "gallery" pour ne pas ajouter les éléments les uns à la suite des autres puis afficher les éléments triés
         document.querySelector(".gallery").innerHTML = "";

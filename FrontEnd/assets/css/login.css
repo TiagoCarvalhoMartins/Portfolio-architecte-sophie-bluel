@@ -1,0 +1,49 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+    width: 25%;
+}
+
+input {
+    border: none;
+    box-shadow: 5px 5px 25px 0px rgba(0,0,0,0.2);
+    height: 30px;
+    margin-top: 5px;
+}
+
+.connectButton {
+	border: solid #1D6154 1px;
+    color: white;
+	border-radius: 60px;
+	background-color: #1D6154;
+	padding: 10px 40px 10px 40px;
+	margin-top: 30px; 
+}
+
+.connectButton span {
+	font-family: 'Syne';
+	font-size: 15px;
+}
+
+#forgotPassword {
+    color: inherit;
+    margin-top: 30px;
+}
+
+footer {
+    margin-top: auto;
+}
