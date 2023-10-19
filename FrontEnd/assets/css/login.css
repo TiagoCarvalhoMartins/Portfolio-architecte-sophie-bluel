@@ -29,6 +29,12 @@ input[data-error-visible="true"] {
     box-shadow: 0 0 5px 1px red;
 }
 
+#error {
+    display: none;
+    margin-top:10px;
+    color: red;
+}
+
 #connectButton {
 	border: solid #1D6154 1px;
     color: white;

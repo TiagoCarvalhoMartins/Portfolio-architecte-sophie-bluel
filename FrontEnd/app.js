@@ -1,7 +1,8 @@
 // Définition de l'URL de l'API
 const worksURL = 'http://localhost:5678/api/works';
 const categoriesURL = 'http://localhost:5678/api/categories';
-
+const token = window.sessionStorage.getItem("identifiant")
+console.log(token)
 // Utilisation de la méthode fetch pour récupérer les données de l'API
 async function getWorks() {
   let response = await fetch(worksURL)

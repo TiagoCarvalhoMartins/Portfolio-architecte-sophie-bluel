@@ -19,10 +19,6 @@ email.addEventListener('change', function() {
 
 password.addEventListener('change', function() {
     passwordValue = this.value;
-      
-    if (!passwordValue.match) {
-        this.setAttribute('data-error-visible', 'true');
-    } 
 });
 
 submit.addEventListener("click", function() {
@@ -47,8 +43,16 @@ submit.addEventListener("click", function() {
             APIanswer=data
 
             if (APIanswer.message == 'user not found') {
+                const errorMessage = document.getElementById('error');
                 password.setAttribute('data-error-visible', 'true');
                 email.setAttribute('data-error-visible', 'true')
+                errorMessage.style.display = 'block';
+
+            } else {
+                sessionStorage.setItem("identifiant", APIanswer.token)
+                const indexPage = "index.html";
+                window.location.href = indexPage;
+                console.log(window.sessionStorage.getItem("identifiant"))
             }
         })
 });
