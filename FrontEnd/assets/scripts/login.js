@@ -52,7 +52,6 @@ submit.addEventListener("click", function() {
                 sessionStorage.setItem("identifiant", APIanswer.token)
                 const indexPage = "index.html";
                 window.location.href = indexPage;
-                console.log(window.sessionStorage.getItem("identifiant"))
             }
         })
 });
