@@ -126,6 +126,25 @@ li:hover {
 	margin-bottom: 1em;
 }
 
+.titleEditButton {
+	display: flex;
+	justify-content: center;
+	align-items: baseline;
+}
+
+#editButton {
+	color: black;
+	text-decoration: none;
+	display: none;
+	margin-left: 2%;
+	font-weight: 700;
+
+}
+
+#editButton span {
+	padding-right: 20%;
+}
+
 .filterButtons {
 	display: flex;
 	justify-content: center;
@@ -211,7 +230,7 @@ input[type="submit"]{
 }
 
 aside {
-	display: flex;
+	display: none;
 	justify-content: center;
 	align-items: center;
 
@@ -236,7 +255,7 @@ aside {
 	align-items: center;
 }
 
-.background {
+#background {
 
     position: fixed;
     z-index: 1;
@@ -249,7 +268,7 @@ aside {
 	opacity: 0.5;
 }
 
-.containerAdmin .closeButton {
+.containerAdmin #closeButton {
 	border: none;
 	background-color: white;
 	color: black;

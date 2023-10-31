@@ -18,7 +18,7 @@
 		<ul>
 			<li>projets</li>
 			<li>contact</li>
-			<li id="login">login</li>
+			<li class="login">login</li>
 			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 		</ul>
 	</nav>
@@ -36,7 +36,13 @@
 		</article>
 	</section>
 	<section id="portfolio">
-		<h2>Mes Projets</h2>
+		<div class="titleEditButton">
+			<h2>Mes Projets</h2>
+			<a id="editButton" href="#">
+				<span class="fa-regular fa-pen-to-square"></span>
+				<p>modifier</p>
+			</a>
+		</div>
 		<div class="filterButtons">
 			<button class="filterButton active" name="all">
 				<span class="textButton">Tous</span>
@@ -59,56 +65,12 @@
 		</form>
 	</section>
 </main>
-<aside>
-	<div class="background"></div>
+<aside id="editPage">
+	<div id="background"></div>
 	<div class="containerAdmin">
-		<button class="closeButton"><span class="fas fa-solid fa-xmark" title="Bouton Fermer"></span></button>
+		<button id="closeButton"><span class="fas fa-solid fa-xmark" title="Bouton Fermer"></span></button>
 		<h2 class="titleAdmin">Galerie photo</h2>
 		<div class="containerPhotosAdmin">
-			<div class="containerPhoto">
-				<img src="/FrontEnd/assets/images/abajour-tahina.png">
-				<button class="trashIcon fa-solid fa-trash-can"></button>
-			</div>
-			<div class="containerPhoto">
-				<img src="/FrontEnd/assets/images/abajour-tahina.png">
-				<button class="trashIcon fa-solid fa-trash-can"></button>
-			</div>
-			<div class="containerPhoto">
-				<img src="/FrontEnd/assets/images/abajour-tahina.png">
-				<button class="trashIcon fa-solid fa-trash-can"></button>
-			</div>
-			<div class="containerPhoto">
-				<img src="/FrontEnd/assets/images/abajour-tahina.png">
-				<button class="trashIcon fa-solid fa-trash-can"></button>
-			</div>
-			<div class="containerPhoto">
-				<img src="/FrontEnd/assets/images/abajour-tahina.png">
-				<button class="trashIcon fa-solid fa-trash-can"></button>
-			</div>
-			<div class="containerPhoto">
-				<img src="/FrontEnd/assets/images/abajour-tahina.png">
-				<button class="trashIcon fa-solid fa-trash-can"></button>
-			</div>
-			<div class="containerPhoto">
-				<img src="/FrontEnd/assets/images/abajour-tahina.png">
-				<button class="trashIcon fa-solid fa-trash-can"></button>
-			</div>
-			<div class="containerPhoto">
-				<img src="/FrontEnd/assets/images/abajour-tahina.png">
-				<button class="trashIcon fa-solid fa-trash-can"></button>
-			</div>
-			<div class="containerPhoto">
-				<img src="/FrontEnd/assets/images/abajour-tahina.png">
-				<button class="trashIcon fa-solid fa-trash-can"></button>
-			</div>
-			<div class="containerPhoto">
-				<img src="/FrontEnd/assets/images/abajour-tahina.png">
-				<button class="trashIcon fa-solid fa-trash-can"></button>
-			</div>
-			<div class="containerPhoto">
-				<img src="/FrontEnd/assets/images/abajour-tahina.png">
-				<button class="trashIcon fa-solid fa-trash-can"></button>
-			</div>
 		</div>
 		<div class="border"></div>
 		<input type="button" id="addPhoto" value="Ajouter une photo"/>
@@ -121,6 +83,7 @@
 		</ul>
 	</nav>
 </footer>
+<script src="/FrontEnd/assets/scripts/admin.js"></script>
 <script src="/FrontEnd/assets/scripts/index.js"></script>
 </body>
 </html>
