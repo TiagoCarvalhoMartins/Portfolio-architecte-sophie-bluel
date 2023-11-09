@@ -229,12 +229,13 @@ input[type="submit"]{
 	border-radius: 60px ;
 }
 
-aside {
+#editPage {
 	display: none;
 	justify-content: center;
 	align-items: center;
 
 }
+
 
 .containerAdmin {
 	display: flex;
@@ -268,7 +269,7 @@ aside {
 	opacity: 0.5;
 }
 
-.containerAdmin #closeButton {
+.containerAdmin .closeButton {
 	border: none;
 	background-color: white;
 	color: black;
@@ -323,7 +324,7 @@ aside {
 	z-index: 1;
 	height: 1px;
 	background-color: #B3B3B3;
-	width: 100%;
+	width: 200%;
 	margin-top: 15%;
 
 }
@@ -340,6 +341,130 @@ input[type="button"]{
 	font-weight: 700; 
 	width: 80%;
 	margin-bottom: 0;
+}
+
+#addPhoto {
+	display: none;
+	justify-content: center;
+	align-items: center;
+}
+
+.containerAddPhotos {
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	justify-content: center;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	z-index: 2;
+	background-color: white;
+	padding: 5% 10% 5% 10%;
+	margin-top: 5%;
+	max-width: 50%;
+	max-height: 50%;
+	height: fit-content;
+	border-radius: 10px;
+	align-items: center;
+}
+
+.titleAddPhoto {
+	text-align: center;
+	color: black;
+	font-family: 'Work Sans';
+	margin-bottom: 20%;
+	margin-top: 5%;
+	font-weight: 400;
+}
+
+.containerAddPhotos #previousButton {
+	border: none;
+	background-color: white;
+	color: black;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 20px 0px 0 20px;
+	font-size: 30px;
+}
+
+.containerAddPhotos .closeButton {
+	border: none;
+	background-color: white;
+	color: black;
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 20px 20px 0 0;
+	font-size: 30px;
+}
+
+#containerAddPhoto {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #e8f1f6;
+	width: 200%;
+	border-radius: 3px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.photoToAdd {
+	width: 100px;
+}
+
+input[type="button"]#addPhotoButton {
+	border: none;
+    color: #306685;
+	font-size: 15px;
+	border-radius: 60px;
+	background-color: #cbd6dc;
+	padding: 10px 40px 10px 40px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-family: 'Syne';
+	font-weight: 700; 
+	width: auto;
+}
+
+.inputContainer {
+	display: flex;
+	flex-direction: column;
+	width: 200%;
+	margin-top: 20px;
+}
+
+.inputContainer label {
+	margin-bottom: 3px;
+}
+
+.inputContainer input {
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	height: 50px;
+	font-size: 20px;
+	outline: none;
+}
+
+.inputContainer select {
+	border-color: white;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	height: 50px;
+	font-size: 20px;
+	outline: 0px;
+}
+
+.containerAddPhotos .notValide {
+	background-color: #a7a7a7;
+	border: none;
+	width: 120%;
+}
+
+.containerAddPhotos .valide {
+	background-color: #1D6154;
+	border: none;
+	width: 120%;
 }
 
 

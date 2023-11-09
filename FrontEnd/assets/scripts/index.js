@@ -1,20 +1,3 @@
-// Définition de l'URL de l'API
-const worksURL = 'http://localhost:5678/api/works';
-const categoriesURL = 'http://localhost:5678/api/categories';
-// Utilisation de la méthode fetch pour récupérer les données de l'API
-async function getWorks() {
-  let response = await fetch(worksURL)
-  let myJSON = await response.json();
-     
-  return (myJSON)
-}
-
-async function getCategories() {
-  let response = await fetch(categoriesURL)
-  let myJSON = await response.json();
-     
-  return (myJSON)
-}
 
 // Le login renvoi vers une nouvelle page nommé login.html
 const login = document.getElementsByClassName("login");
@@ -100,6 +83,7 @@ async function init () {
   logout()
   adminImages(worksData)
   deleteImages(trashIcons)
+  changeValidationButton()
 }
 
 init();

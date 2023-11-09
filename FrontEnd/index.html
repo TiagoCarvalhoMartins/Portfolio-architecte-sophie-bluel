@@ -68,12 +68,40 @@
 <aside id="editPage">
 	<div id="background"></div>
 	<div class="containerAdmin">
-		<button id="closeButton"><span class="fas fa-solid fa-xmark" title="Bouton Fermer"></span></button>
+		<button class="closeButton"><span class="fas fa-solid fa-xmark" title="Bouton Fermer"></span></button>
 		<h2 class="titleAdmin">Galerie photo</h2>
 		<div class="containerPhotosAdmin">
 		</div>
 		<div class="border"></div>
-		<input type="button" id="addPhoto" value="Ajouter une photo"/>
+		<input type="button" id="addWindow" value="Ajouter une photo"/>
+	</div>
+</aside>
+<aside id="addPhoto">
+	<div id="background"></div>
+	<div class="containerAddPhotos">
+		<button id="previousButton"><span class="fa-solid fa-arrow-left" title="Bouton Fermer"></span></button>
+		<button class="closeButton"><span class="fas fa-solid fa-xmark" title="Bouton précédent"></span></button>
+		<h2 class="titleAddPhoto">Ajout photo</h2>
+		<div id="containerAddPhoto">
+			<img src="/FrontEnd/assets/icons/picture-svgrepo-com-1.png" alt="">
+			<input type="button" id="addPhotoButton" value="+ Ajouter photo"/>
+			<p>jpg, png : 4mo max</p>
+		</div>
+		<div class="inputContainer">
+			<label for="title">Titre</label>
+			<input type="text" id="title" name="title" required/>
+		</div>
+		<div class="inputContainer">
+			<label for="category">Catégorie</label>
+			<select id="category" name="category" required>
+				<option value=""></option>
+				<option value="Objets">Objets</option>
+				<option value="Appartements">Appartements</option>
+				<option value="Hotels & restaurants">Hotels & restaurants</option>
+			</select>
+		</div>
+		<div class="border"></div>
+		<input type="button" class="validationButton valide" value="Valider"/>
 	</div>
 </aside>
 <footer>
