@@ -343,128 +343,169 @@ input[type="button"]{
 	margin-bottom: 0;
 }
 
-#addPhoto {
-	display: none;
-	justify-content: center;
-	align-items: center;
+
+
+.notValide {
+	border: none;
+	text-align: center;
+    color: white;
+	font-size: 15px;
+	border-radius: 60px;
+	background-color: #a7a7a7;
+	padding: 10px 40px 10px 40px;
+	margin-top: 30px;
+	font-family: 'Syne';
+	font-weight: 700; 
+	width: 30%;
+	margin-bottom: 20px;
 }
 
-.containerAddPhotos {
+.valide {
+	border: none;
+    color: white;
+	font-size: 15px;
+	border-radius: 60px;
+	background-color: #1D6154;
+	padding: 10px 40px 10px 40px;
+	margin-top: 30px;
+	font-family: 'Syne';
+	font-weight: 700; 
+	width: 30%;
+	margin-bottom: 20px;
+}
+
+.modal, .modal_add{
+	position: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.4);
+}
+
+/* Définition du style pour la modale d'ajout de photo*/
+
+.modal_wrapper_ajout{
+	background-color: white;
+	z-index: 2;
+	width: 40%;
+	border-radius: 10px;
 	display: flex;
 	flex-direction: column;
-	align-content: center;
-	justify-content: center;
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	z-index: 2;
-	background-color: white;
-	padding: 5% 10% 5% 10%;
-	margin-top: 5%;
-	max-width: 50%;
-	max-height: 50%;
-	height: fit-content;
-	border-radius: 10px;
 	align-items: center;
 }
 
-.titleAddPhoto {
+.modal_wrapper_ajout h2 {
 	text-align: center;
 	color: black;
 	font-family: 'Work Sans';
-	margin-bottom: 20%;
+	margin-bottom: 5%;
 	margin-top: 5%;
 	font-weight: 400;
 }
 
-.containerAddPhotos #previousButton {
-	border: none;
-	background-color: white;
-	color: black;
-	position: absolute;
-	top: 0;
-	left: 0;
-	margin: 20px 0px 0 20px;
-	font-size: 30px;
+#upload_form{
+	display: flex;
+	width: 50%;
+	margin: auto;
+	flex-direction: column;
+	border-bottom: gray solid 1px;
+	padding-bottom: 50px;
 }
 
-.containerAddPhotos .closeButton {
+.titre_et_fermer_ajout{
+	display: flex;
+	width: 80%;
+	justify-content: space-between;
+	
+}
+
+.titre_et_fermer_ajout #previousButton {
 	border: none;
 	background-color: white;
 	color: black;
-	position: absolute;
 	top: 0;
 	right: 0;
-	margin: 20px 20px 0 0;
+	margin: 20px 0px 0 0;
 	font-size: 30px;
 }
 
-#containerAddPhoto {
+.titre_et_fermer_ajout #close_add {
+	border: none;
+	background-color: white;
+	color: black;
+	top: 0;
+	right: 0;
+	margin: 20px 0px 0 0;
+	font-size: 30px;
+}
+
+#img_and_spec{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background-color: #e8f1f6;
-	width: 200%;
-	border-radius: 3px;
-	padding-top: 20px;
-	padding-bottom: 20px;
 }
 
-#preview {
-	width: 100px;
+#img_and_spec i{
+	font-size: 4em;
+	color:  #d8e4e2;
 }
 
-#addPhotoButton {
-	border: none;
-    color: #306685;
-	font-size: 15px;
-	border-radius: 60px;
-	background-color: #cbd6dc;
-	padding: 10px 40px 10px 40px;
-	margin-top: 10px;
-	margin-bottom: 10px;
-	font-family: 'Syne';
-	font-weight: 700; 
-	width: auto;
+#img_and_spec p{
+	font-size: 0.7em;
 }
 
-.inputContainer {
-	display: flex;
-	flex-direction: column;
-	width: 200%;
+#addPhotoButton{
+	color: rgb(42, 60, 109);
+	background-color: #d8e4e2;
+	border-radius: 20px;
+	padding: 12px 30px 12px 30px;
+	margin: auto;
+	font-weight: 600;
+}
+
+#photo{
+	display: none;
+}
+
+#upload_form label{
 	margin-top: 20px;
+	margin-bottom: 5px;
+	font-size: 1.1em;
 }
 
-.inputContainer label {
-	margin-bottom: 3px;
-}
-
-.inputContainer input {
+#title_input {
 	border: none;
-	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
-	height: 50px;
-	font-size: 20px;
-	outline: none;
 }
 
-.inputContainer select {
+#img_background{
+	background-color: rgba(118, 171, 240, 0.219);
+	height: 270px;
+	border-radius: 10px;
+	display: flex;
+	position: relative;
+	justify-content: center;
+  	align-items: center;
+}
+
+#upload_form img{
+	max-height: 270px;
+	max-width: 210px;
+	position: absolute;
+	z-index: 1;
+}
+
+#category_select {
 	border-color: white;
+}
+
+#upload_form input:not(#photo), #category_select {
+	height: 35px;
+	font-size: 1.2em;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
-	height: 50px;
-	font-size: 20px;
-	outline: 0px;
-}
-
-.containerAddPhotos .notValide {
-	background-color: #a7a7a7;
-	border: none;
-	width: 120%;
-}
-
-.containerAddPhotos .valide {
-	background-color: #1D6154;
-	border: none;
-	width: 120%;
 }
 
 

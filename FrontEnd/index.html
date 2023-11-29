@@ -76,34 +76,35 @@
 		<input type="button" id="addWindow" value="Ajouter une photo"/>
 	</div>
 </aside>
-<aside id="addPhoto">
+<aside id="modal2" class="modal_add" aria-hidden="true" style="display:none">
 	<div id="background"></div>
-	<div class="containerAddPhotos">
-		<button id="previousButton"><span class="fa-solid fa-arrow-left" title="Bouton Fermer"></span></button>
-		<button class="closeButton"><span class="fas fa-solid fa-xmark" title="Bouton précédent"></span></button>
-		<h2 class="titleAddPhoto">Ajout photo</h2>
-		<div id="containerAddPhoto">
-			<img id="preview">
-			<i class="fa-solid fa-image"></i>
-			<label for="photoToAdd" id="addPhotoButton">+ Ajouter photo</label>
-			<p>jpg. png : 4mo max</p>
+	<div class="modal_wrapper_ajout">
+		<div class="titre_et_fermer_ajout">
+			<button id="previousButton"><span class="fa-solid fa-arrow-left" title="Bouton Fermer"></span></button>
+			<h2 class="exclure">Ajout photo</h2>
+			<button id="close_add" class="closeButton"><span class="fas fa-solid fa-xmark" title="Bouton Fermer"></span></button>
 		</div>
-		<input id="photoToAdd" type="file" name="image" accept=".jpg,.png">
-		<div class="inputContainer">
-			<label for="title">Titre</label>
-			<input type="text" id="title" name="title" required/>
-		</div>
-		<div class="inputContainer">
-			<label for="category">Catégorie</label>
-			<select id="category" name="category" required>
-				<option value="0"></option>
+
+		<form id="upload_form">
+			<div id="img_background">
+				<div id="img_and_spec">
+					<i class="fa-solid fa-image"></i>
+					<label for="photo" id="addPhotoButton">+ Ajouter photo</label>
+					<p>jpg. png : 4mo max</p>
+				</div>
+			</div>
+			<input id="photo" type="file" name="image" accept=".jpg,.png">
+			<label for="title_input">Titre</label>
+			<input type="text" id="title_input" name="title" required>
+			<label for="category_select">Catégorie</label>
+			<select name="category" id="category_select">
+				<option value="0">&nbsp;</option>
 				<option value="1">Objets</option>
 				<option value="2">Appartements</option>
-				<option value="3">Hotels & restaurants</option>
+				<option value="3">Hôtels & restaurants</option>
 			</select>
-		</div>
-		<div class="border"></div>
-		<input type="button" id="validationButton" class="notValide" value="Valider"/>
+		</form>
+		<button id="ajout_photo" class="valide">Valider</button>
 	</div>
 </aside>
 <footer>

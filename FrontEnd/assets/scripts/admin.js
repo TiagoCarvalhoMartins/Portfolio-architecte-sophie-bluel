@@ -70,7 +70,7 @@ async function adminImages (worksData) {
 
 const closeCrosses = document.getElementsByClassName("closeButton")
 const background = document.getElementById("background")
-const addPhotoWindow = document.getElementById("addPhoto")
+const addPhotoWindow = document.getElementById("modal2")
 
 for (let i = 0; i < closeCrosses.length; i++) {
     closeCrosses[i].addEventListener("click", function() {
@@ -142,84 +142,73 @@ addPhotoButton.addEventListener("click", function() {
     fileInput.click();
 });
 
-const imageInput = document.querySelector("#photoToAdd");
-const containerAddPhoto = document.getElementById("containerAddPhoto");
+// Fonction pour afficher une preview de l'image uploadée //
 
-fileInput.addEventListener("change", function() {
-    // Gérer le fichier sélectionné ici
-    const selectedFile = fileInput.files[0];
-    containerAddPhoto.innerHTML = ''
-    if (selectedFile) {
-        const reader = new FileReader();
+const imageInput = document.querySelector("#photo");
+const submitButton = document.querySelector("#ajout_photo");
+const imgAndSpec = document.querySelector("#img_and_spec");
+const imgBackground = document.getElementById('img_background');
+const previewImg = document.createElement('img');                   // Création de la balise img avec l'id "preview" //
+previewImg.id = 'preview';
 
-        reader.onload = function(e) {
-            // Créer un élément img pour afficher la prévisualisation de l'image
-            const previewImage = document.createElement("img");
-            previewImage.src = e.target.result;
-            previewImage.id = "preview";
+imgBackground.appendChild(previewImg);
 
-            // Vérifier si l'élément avec l'id "preview" existe déjà
-            const existingPreview = document.getElementById("preview");
-            if (existingPreview) {
-                // Si l'élément existe, le remplacer par le nouvel élément
-                containerAddPhoto.replaceChild(previewImage, existingPreview);
-            } else {
-                // Sinon, ajouter le nouvel élément à la fin du conteneur
-                containerAddPhoto.appendChild(previewImage);
-            }
-        };
+const previewImage = document.querySelector("#preview");
 
-        // Lire le contenu du fichier en tant que Data URL
-        reader.readAsDataURL(selectedFile);
-
-        // Réinitialiser la valeur de l'input pour pouvoir sélectionner le même fichier à nouveau
-        fileInput.value = null;
-    }
+imageInput.addEventListener("change", function () {
+  const file = this.files[0];
+  if (file) {
+    const reader = new FileReader();                // Lecture de l'image uploadée et affichage d'une miniature de celle ci //
+    reader.addEventListener("load", function () {
+      previewImage.src = reader.result;
+    });
+    reader.readAsDataURL(file);
+  }
 });
 
 
-const addButton = document.querySelector("#validationButton");
+// Envoi de l'image uploadée à l'API et mise à jour de la page du site + modale d'édition //
+
+const addButton = document.querySelector("#ajout_photo");
 
 addButton.addEventListener("click", function () {
-    const imageInput = document.querySelector("#photoToAdd");
-    const titleInput = document.querySelector("#title");
-    const categorySelect = document.querySelector("#category");
-    const formData = new FormData();
-  
-    if (!imageInput.files[0]) {
-      alert("Veuillez sélectionner une photo.");
-      return;
-    }
-  
-    if (!titleInput.value) {
-      alert("Veuillez saisir un titre.");
-      return;
-    }
-  
-    if (categorySelect.value == 0) {
-      alert("Veuillez saisir une catégorie.");
-      return;
-    }
+  const imageInput = document.querySelector("#photo");
+  const titleInput = document.querySelector("#title_input");
+  const categorySelect = document.querySelector("#category_select");
+  const formData = new FormData();
 
-    
-  
-    formData.append("image", imageInput.files[0]);
-    formData.append("title", titleInput.value);
-    formData.append("category", categorySelect.value);
-  
-  
-    fetch('http://localhost:5678/api/works', {
-      method: "POST",
-      headers: {
-        'Authorization': `Bearer ${token}`
-      },
-      body: formData
+  if (!imageInput.files[0]) {
+    alert("Veuillez sélectionner une photo.");
+    return;
+  }
+
+  if (!titleInput.value) {
+    alert("Veuillez saisir un titre.");
+    return;
+  }
+
+  if (categorySelect.value == 0) {
+    alert("Veuillez saisir une catégorie.");
+    return;
+  }
+
+  formData.append("image", imageInput.files[0]);
+  formData.append("title", titleInput.value);
+  formData.append("category", categorySelect.value);
+
+
+  fetch('http://localhost:5678/api/works', {
+    method: "POST",
+    headers: {
+      'Authorization': `Bearer ${token}`
+    },
+    body: formData
+  })
+    .then(response => response.json())
+    .then(data => {
+      console.log("Success:", data);
     })
-      .then(response => response.json())
-      .then(data => {
-        console.log("Success:", data);
-      })
-      .catch(error => {
-        console.error("Error:", error);
-      });
-  });
+    .catch(error => {
+      console.error("Error:", error);
+    });
+});
