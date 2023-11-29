@@ -83,7 +83,6 @@ async function init () {
   logout()
   adminImages(worksData)
   deleteImages(trashIcons)
-  changeValidationButton()
 }
 
 init();

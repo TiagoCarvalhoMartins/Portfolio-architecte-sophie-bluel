@@ -410,11 +410,11 @@ input[type="button"]{
 	padding-bottom: 20px;
 }
 
-.photoToAdd {
+#preview {
 	width: 100px;
 }
 
-input[type="button"]#addPhotoButton {
+#addPhotoButton {
 	border: none;
     color: #306685;
 	font-size: 15px;

@@ -83,10 +83,12 @@
 		<button class="closeButton"><span class="fas fa-solid fa-xmark" title="Bouton précédent"></span></button>
 		<h2 class="titleAddPhoto">Ajout photo</h2>
 		<div id="containerAddPhoto">
-			<img src="/FrontEnd/assets/icons/picture-svgrepo-com-1.png" alt="">
-			<input type="button" id="addPhotoButton" value="+ Ajouter photo"/>
-			<p>jpg, png : 4mo max</p>
+			<img id="preview">
+			<i class="fa-solid fa-image"></i>
+			<label for="photoToAdd" id="addPhotoButton">+ Ajouter photo</label>
+			<p>jpg. png : 4mo max</p>
 		</div>
+		<input id="photoToAdd" type="file" name="image" accept=".jpg,.png">
 		<div class="inputContainer">
 			<label for="title">Titre</label>
 			<input type="text" id="title" name="title" required/>
@@ -94,14 +96,14 @@
 		<div class="inputContainer">
 			<label for="category">Catégorie</label>
 			<select id="category" name="category" required>
-				<option value=""></option>
-				<option value="Objets">Objets</option>
-				<option value="Appartements">Appartements</option>
-				<option value="Hotels & restaurants">Hotels & restaurants</option>
+				<option value="0"></option>
+				<option value="1">Objets</option>
+				<option value="2">Appartements</option>
+				<option value="3">Hotels & restaurants</option>
 			</select>
 		</div>
 		<div class="border"></div>
-		<input type="button" class="validationButton valide" value="Valider"/>
+		<input type="button" id="validationButton" class="notValide" value="Valider"/>
 	</div>
 </aside>
 <footer>
