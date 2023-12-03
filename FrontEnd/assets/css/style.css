@@ -98,27 +98,27 @@ nav li {
 li:hover {
 	color: #B1663C;
 }
-#introduction {
+.introduction {
 	display: flex;
 	align-items: center;
 }
-#introduction figure {
+.introduction figure {
 	flex: 1
 }
-#introduction img {
+.introduction img {
 	display: block;
 	margin: auto;
 	width: 80%;
 }
 
-#introduction article {
+.introduction article {
 	flex: 1
 }
-#introduction h2 {
+.introduction h2 {
 	margin-bottom: 1em;
 }
 
-#introduction p {
+.introduction p {
 	margin-bottom: 0.5em;
 }
 #portfolio h2 {
@@ -256,7 +256,7 @@ input[type="submit"]{
 	align-items: center;
 }
 
-#background {
+.background {
 
     position: fixed;
     z-index: 1;

@@ -50,6 +50,7 @@ submit.addEventListener("click", function() {
 
             } else {
                 sessionStorage.setItem("identifiant", APIanswer.token)
+                sessionStorage.setItem("userID", APIanswer.userId)
                 const indexPage = "index.html";
                 window.location.href = indexPage;
             }

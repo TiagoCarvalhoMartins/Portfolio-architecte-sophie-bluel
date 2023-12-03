@@ -17,6 +17,7 @@ async function getCategories() {
 }
 
 const token = window.sessionStorage.getItem("identifiant")
+const userId = window.sessionStorage.getItem("userID")
 let logoutElements = []
 
 async function logoutGestion () {
@@ -105,7 +106,7 @@ async function deleteImages(trashIcons) {
                     method: "DELETE",
                     headers: headers
                 };
-                const response = await fetch(`http://localhost:5678/api/works/${dataId}`, requestOptions);    
+                const response = await fetch(`http://localhost:5678/api/works/${dataId}?userId=${userId}`, requestOptions);    
                 if (response.ok) {
                     // Si la requête réussit (statut 200), vous pouvez supprimer l'élément du DOM.
                     //event.preventDefault()
