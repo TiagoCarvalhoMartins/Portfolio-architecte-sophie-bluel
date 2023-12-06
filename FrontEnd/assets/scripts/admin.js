@@ -70,8 +70,9 @@ async function adminImages (worksData) {
 }
 
 const closeCrosses = document.getElementsByClassName("closeButton")
-const background = document.getElementById("background")
+//const background = document.getElementById("background")
 const addPhotoWindow = document.getElementById("modal2")
+const background = document.getElementsByClassName("background")
 
 for (let i = 0; i < closeCrosses.length; i++) {
     closeCrosses[i].addEventListener("click", function() {
@@ -80,11 +81,12 @@ for (let i = 0; i < closeCrosses.length; i++) {
     })
 }
 
-
-background.addEventListener("click", function() {
-    editPage.style.display = 'none';
-    addPhotoWindow.style.display = 'none';
-});
+for (let i = 0; i < background.length; i++) {
+  background[i].addEventListener("click", function() {
+      editPage.style.display = 'none';
+      addPhotoWindow.style.display = 'none';
+  });
+}
 
 const trashIcons = document.getElementsByClassName("trashIcon")
 let dataId = ""
